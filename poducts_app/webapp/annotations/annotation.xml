@@ -1,0 +1,442 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <!-- <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference> -->   
+    <edmx:Reference Uri="/(S(ptqjs5txamu0vburq5katya1))/OData/OData.svc/$metadata">
+        <edmx:Include Namespace="ODataDemo"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">       
+            <Annotations Target="ODataDemo.Category/Name">
+                <Annotation Term="Common.Text" Path="ID">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextLast" />
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ODataDemo.Supplier/Name">
+                <Annotation Term="Common.Text" Path="ID">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextLast" />
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ODataDemo.Product/Name">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Products"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Name"/>
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ODataDemo.Product/Rating">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Products"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Rating"/>
+                                    <PropertyValue Property="ValueListProperty" String="Rating"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Rating"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ODataDemo.Product/Price">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Products"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Price"/>
+                                    <PropertyValue Property="ValueListProperty" String="Price"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Price"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ODataDemo.Category/Name">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="Categories"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Name"/>
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <!-- <Annotation Term="Common.ValueListWithFixedValues" Bool="true" /> -->
+            </Annotations>
+            <Annotations Target="ODataDemo.Supplier/Name">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Suppliers"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Name"/>
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Address/Street"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Concurrency"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>           
+
+            <Annotations Target="ODataDemo.Product">
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="{@i18n>product}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>                        
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Name</PropertyPath>
+                        <PropertyPath>ReleaseDate</PropertyPath>
+                        <PropertyPath>DiscontinuedDate</PropertyPath>
+                        <PropertyPath>Rating</PropertyPath>
+                        <PropertyPath>Price</PropertyPath>
+                        <PropertyPath>Category/Name</PropertyPath>
+                        <PropertyPath>Supplier/Name</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="TableRating">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Rating" />
+                        <PropertyValue Property="TargetValue" Decimal="5" />
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating" />
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>productName}"/>
+                            <PropertyValue Property="Value" Path="Name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>description}"/>
+                            <PropertyValue Property="Value" Path="Description"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>releaseDate}"/>
+                            <PropertyValue Property="Value" Path="ReleaseDate"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>discontinuedDate}"/>
+                            <PropertyValue Property="Value" Path="DiscontinuedDate"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low" />
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="{@i18n>rating}"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#TableRating" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>price}"/>
+                            <PropertyValue Property="Value" Path="Price"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>category}"/>
+                            <PropertyValue Property="Value" Path="Category/Name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>supplier}"/>
+                            <PropertyValue Property="Value" Path="Supplier/Name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="ID"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="ImageUrl" Path="ImageUrl"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeName" String="{@i18n>product}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>products}"/>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.FieldGroup" Qualifier="ProductDescription">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>productDescription}"/>
+                                    <PropertyValue Property="Value" Path="Description"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>releaseDate}"/>
+                                    <PropertyValue Property="Value" Path="ReleaseDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>supplier}" />
+                                    <PropertyValue Property="Value" Path="Supplier/Name"/>
+
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ProductDescription"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#ProductPrice"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#ProductRating"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="ProductPrice">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="Price" />
+                        <PropertyValue Property="Title" String="{@i18n>price}" />
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="ProductRating">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Title" String="{@i18n>rating}" />
+                        <PropertyValue Property="Value" Path="Rating" />
+                        <PropertyValue Property="TargetValue" Decimal="5" />
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating" />
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="{@i18n>generalInformation}" />
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="{@i18n>productDetails}" />
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ProductDetails" />
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="{@i18n>releaseInformation}" />
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ReleaseInformation" />
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation >
+
+                <Annotation Term="UI.FieldGroup" Qualifier="ProductDetails">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>productName1}" />
+                                    <PropertyValue Property="Value" Path="Name"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>productDescription1}" />
+                                    <PropertyValue Property="Value" Path="Description"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>releaseDate1}" />
+                                    <PropertyValue Property="Value" Path="ReleaseDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>category}" />
+                                    <PropertyValue Property="Value" Path="Category/Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.ConnectedFields" Qualifier="SupplierAddress">
+                    <Record >
+                        <PropertyValue Property="Data">
+                            <Record >
+                                <PropertyValue Property="AddressStreet">
+                                    <Record Type="UI.DataField">
+                                        <PropertyValue Property="Value" Path="Supplier/Address/Street"/>
+                                    </Record>
+                                </PropertyValue>
+                                <PropertyValue Property="AddressCity">
+                                    <Record Type="UI.DataField">
+                                        <PropertyValue Property="Value" Path="Supplier/Address/City"/>
+                                    </Record>
+                                </PropertyValue>
+                                <PropertyValue Property="AddressState">
+                                    <Record Type="UI.DataField">
+                                        <PropertyValue Property="Value" Path="Supplier/Address/State"/>
+                                    </Record>
+                                </PropertyValue>
+                                <PropertyValue Property="AddressZipCode">
+                                    <Record Type="UI.DataField">
+                                        <PropertyValue Property="Value" Path="Supplier/Address/ZipCode"/>
+                                    </Record>
+                                </PropertyValue>
+                                <PropertyValue Property="AddressCountry">
+                                    <Record Type="UI.DataField">
+                                        <PropertyValue Property="Value" Path="Supplier/Address/Country"/>
+                                    </Record>
+                                </PropertyValue>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Label" String="{@i18n>supplierAddress}" />
+                        <PropertyValue Property="Template" String="{AddressStreet} / {AddressCity}  {AddressState}  {AddressZipCode} {AddressCountry}" />
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="ReleaseInformation">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>discontinuedDate}" />
+                                    <PropertyValue Property="Value" Path="DiscontinuedDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>supplier}" />
+                                    <PropertyValue Property="Value" Path="Supplier/Name"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>supplierConcurrency}" />
+                                    <PropertyValue Property="Value" Path="Supplier/Concurrency"/>
+                                </Record>
+                                <Record Type="UI.DataFieldForAnnotation">
+                                    <PropertyValue Property="Target" AnnotationPath="@UI.ConnectedFields#SupplierAddress"/>
+                                </Record>
+
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <!-- <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ID"/>
+                            <PropertyValue Property="Value" Path="ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ReleaseDate"/>
+                            <PropertyValue Property="Value" Path="ReleaseDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="DiscontinuedDate"/>
+                            <PropertyValue Property="Value" Path="DiscontinuedDate"/>
+                        </Record>
+                    </Collection>
+                </Annotation> -->
+            </Annotations>
+            <!-- <Annotations Target="ODataDemo.Product/Category/ID">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Categories"/>
+                         <PropertyValue Bool="false" Property="SearchSupported"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <!- <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Category/ID"/>
+                                    <PropertyValue Property="ValueListProperty" String="ID"/>
+                                </Record> ->
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations> -->
+
+            <!-- <Annotations Target="ODataDemo.Supplier">
+                <Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="ID"/>
+                <Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast" />
+            </Annotations> -->
+            <!-- <Annotations Target="ODataDemo.Product/ReleaseDate">
+                <Annotation Term="UI.DataField" Qualifier="DateOnly">
+                    <Record>
+                        <PropertyValue Property="Value" Path="DateTimeProperty"/>
+                        <PropertyValue Property="Type" String="Edm.Date"/>
+                    </Record>
+                </Annotation>
+            </Annotations> -->
+
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
